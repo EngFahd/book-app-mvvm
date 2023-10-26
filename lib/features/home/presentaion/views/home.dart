@@ -1,3 +1,4 @@
+import 'package:book_store/core/utils/Styles.dart';
 import 'package:book_store/core/utils/assets.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/FeatureListViwe.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/custem_app_bar.dart';
@@ -10,7 +11,21 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Column(
-        children: [CustemAppBar(), CustemListViwe()],
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustemAppBar(),
+          CustemListViwe(),
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: Text(
+              "Best Sellers",
+              style: Style.textMeduim,
+            ),
+          )
+        ],
       ),
     );
   }
