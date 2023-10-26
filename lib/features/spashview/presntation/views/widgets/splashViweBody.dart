@@ -58,7 +58,7 @@ class _SplashViweBodyState extends State<SplashViweBody>
       // give shildern all width perant
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo),
+        Image.asset(AssetsData.kLogo),
         const SizedBox(
           height: 10,
         ),

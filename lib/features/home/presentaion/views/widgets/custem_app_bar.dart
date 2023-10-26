@@ -9,11 +9,11 @@ class CustemAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 22),
+      padding: const EdgeInsets.fromLTRB(30, 30, 30, 20),
       child: Row(
         children: [
           Image.asset(
-            AssetsData.logo,
+            AssetsData.kLogo,
             height: 18,
           ),
           const Spacer(),
