@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class SpashViwe extends StatelessWidget {
   const SpashViwe({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-    return const SplashViweBody();
+    return const Scaffold(
+      body: SplashViweBody(),
+    );
   }
 }
