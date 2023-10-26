@@ -23,11 +23,12 @@ class _SplashViweBodyState extends State<SplashViweBody>
 
     // dont forgite Slideanimation widget on the widget animated and give position
   }
+
 // =====================
   void addNavigatorAnimation() {
-     Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Get.to(() => const Home(),
-          transition: Transition.fadeIn, duration: kDuration);
+          transition: Transition.leftToRightWithFade, duration: kDuration);
     });
   }
 
