@@ -1,8 +1,13 @@
+import 'package:book_store/constanceApp.dart';
 import 'package:book_store/core/utils/Styles.dart';
 import 'package:book_store/core/utils/assets.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/Best-Seller-Item.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/Best-Seller-List-Viwe.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/FeatureListViwe.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/custem_app_bar.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/home-viwe-body.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,23 +15,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustemAppBar(),
-          CustemListViwe(),
-          SizedBox(
-            height: 50,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24),
-            child: Text(
-              "Best Sellers",
-              style: Style.textMeduim,
-            ),
-          )
-        ],
-      ),
+      body: HomeViweBody(),
     );
   }
 }

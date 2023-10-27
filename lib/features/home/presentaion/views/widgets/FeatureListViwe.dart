@@ -11,10 +11,7 @@ class CustemListViwe extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: CustemListViweItem(),
-          );
+          return const CustemListViweItem();
         },
       ),
     );
