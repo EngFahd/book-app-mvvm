@@ -12,31 +12,41 @@ class HomeViweBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustemAppBar(),
-              const CustemListViwe(),
-              const SizedBox(height: 50),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Text("Best Sellers",
-                    style: Style.textStyle18
-                        .copyWith(fontFamily: kGetSectraFine)),
-              ),
+              CustemAppBar(),
+              CustemListViwe(),
+              SizedBox(height: 50),
+              TextBestSeller(),
             ],
           ),
         ),
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: BestSellerListViwe(),
           ),
         )
       ],
+    );
+  }
+}
+
+class TextBestSeller extends StatelessWidget {
+  const TextBestSeller({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Text("Best Sellers",
+          style: Style.textStyle18.copyWith(fontFamily: kGetSectraFine)),
     );
   }
 }

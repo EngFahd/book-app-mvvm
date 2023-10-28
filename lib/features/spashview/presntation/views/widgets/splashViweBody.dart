@@ -3,6 +3,7 @@ import 'package:book_store/core/utils/assets.dart';
 import 'package:book_store/features/home/presentaion/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SplashViweBody extends StatefulWidget {
   const SplashViweBody({super.key});
