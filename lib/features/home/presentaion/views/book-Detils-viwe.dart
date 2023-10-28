@@ -1,3 +1,4 @@
+import 'package:book_store/features/home/presentaion/views/widgets/book-Detiles-body.dart';
 import 'package:flutter/material.dart';
 
 class BookDetilesViwe extends StatelessWidget {
@@ -5,6 +6,8 @@ class BookDetilesViwe extends StatelessWidget {
   static String id = 'BookDetilesViwe';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: SafeArea(child: BookDetiledBody()),
+    );
   }
 }
