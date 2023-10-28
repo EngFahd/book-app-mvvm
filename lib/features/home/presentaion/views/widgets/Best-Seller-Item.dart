@@ -2,6 +2,7 @@ import 'package:book_store/constanceApp.dart';
 import 'package:book_store/core/utils/Styles.dart';
 import 'package:book_store/core/utils/assets.dart';
 import 'package:book_store/features/home/presentaion/views/book-Detils-viwe.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/CustemRateListViweItem.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -66,27 +67,7 @@ class BestSellerItems extends StatelessWidget {
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
-                      Row(
-                        children: [
-                          const Icon(
-                            FontAwesomeIcons.solidStar,
-                            color: Color(0xffFFDD4F),
-                          ),
-                          const SizedBox(
-                            width: 6.3,
-                          ),
-                          const Text(
-                            '4.8',
-                            style: Style.textStyle16,
-                          ),
-                          const SizedBox(width: 5),
-                          Text(
-                            "(245)",
-                            style: Style.textStyle14
-                                .copyWith(color: const Color(0xff707070)),
-                          )
-                        ],
-                      )
+                      const CustemRateListViweItem()
                     ],
                   )
                 ],

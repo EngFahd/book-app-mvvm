@@ -1,5 +1,6 @@
 import 'package:book_store/core/utils/Styles.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/CustemBookDetielsAppBar.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/CustemRateListViweItem.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/custem_Listviwe_item.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,9 @@ class BookDetiledBody extends StatelessWidget {
             child: Text("Rudyard Kipling",
                 style: Style.textStyle18.copyWith(
                     fontStyle: FontStyle.italic, fontWeight: FontWeight.w500)),
-          )
+          ),
+          const SizedBox(height: 18),
+          const CustemRateListViweItem(),
         ],
       ),
     );
