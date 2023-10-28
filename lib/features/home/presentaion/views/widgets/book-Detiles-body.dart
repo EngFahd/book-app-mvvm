@@ -1,6 +1,9 @@
 import 'package:book_store/core/utils/Styles.dart';
+import 'package:book_store/core/widgets/CustemButton.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/CustemBookDetielsAppBar.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/CustemRateListViweItem.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/ListVieweBookDetiels.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/buttonBook.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/custem_Listviwe_item.dart';
 import 'package:flutter/material.dart';
 
@@ -13,14 +16,14 @@ class BookDetiledBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const CustemBookDetielsAppBar(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: wideth * 0.1),
+            padding: EdgeInsets.symmetric(horizontal: wideth * 0.25),
             child: const CustemBookImage(),
           ),
-          const SizedBox(height: 43),
+          const SizedBox(height: 30),
           Text(
             "The Jungle Book",
             style: Style.textStyle30.copyWith(
@@ -34,10 +37,23 @@ class BookDetiledBody extends StatelessWidget {
                 style: Style.textStyle18.copyWith(
                     fontStyle: FontStyle.italic, fontWeight: FontWeight.w500)),
           ),
-          const SizedBox(height: 18),
+          const SizedBox(height: 14),
           const CustemRateListViweItem(),
+          const SizedBox(height: 25),
+          const ButtonBook(),
+          const SizedBox(height: 25),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "You Can Also like",
+              style: Style.textStyle14.copyWith(fontWeight: FontWeight.w600),
+            ),
+          ),
+          const SizedBox(height: 10),
+          const ListVieweBookDetiels()
         ],
       ),
     );
   }
 }
+
