@@ -7,7 +7,8 @@ class CustemButton extends StatelessWidget {
     required this.colorText,
     this.borderRadius,
     required this.backgroundColor,
-    required this.text,  this.fontSize,
+    required this.text,
+    this.fontSize,
   });
 
   final Color colorText;
@@ -29,10 +30,10 @@ class CustemButton extends StatelessWidget {
         onPressed: () {},
         child: Text(
           text,
-          style: Style.textStyle18
-              .copyWith(color: colorText, fontWeight: FontWeight.w900,
-              fontSize: fontSize
-              ),
+          style: Style.textStyle18.copyWith(
+              color: colorText,
+              fontWeight: FontWeight.w900,
+              fontSize: fontSize),
         ),
       ),
     );

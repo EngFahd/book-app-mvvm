@@ -34,11 +34,11 @@ class BookApp extends StatelessWidget {
     );
   }
 }
-  // final _router = GoRouter(
-  //   routes: [
-  //     GoRoute(
-  //       path: '/',
-  //       builder: (context, state) => const SplashViwe(),
-  //     ),
-  //   ],
-  // );
+// final _router = GoRouter(
+//   routes: [
+//     GoRoute(
+//       path: '/',
+//       builder: (context, state) => const SplashViwe(),
+//     ),
+//   ],
+// );
