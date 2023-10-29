@@ -1,4 +1,6 @@
 import 'package:book_store/constanceApp.dart';
+import 'package:book_store/features/home/presentaion/views/widgets/Best-Seller-Item.dart';
+import 'package:book_store/features/search-viwe/presentaion/views/widgets/search-list-view.dart';
 import 'package:book_store/features/search-viwe/presentaion/views/widgets/textfiled-search-viwe.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +13,13 @@ class SearchViewBody extends StatelessWidget {
       child: Column(
         children: [
           TextFiledSearchView(),
+          SizedBox(
+            height: 20
+          ),
+          Expanded(child: Searchlistviwe())
         ],
       ),
     );
   }
 }
+
