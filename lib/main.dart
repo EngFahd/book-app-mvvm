@@ -1,4 +1,5 @@
 import 'package:book_store/constanceApp.dart';
+import 'package:book_store/core/utils/AppRouter.dart';
 import 'package:book_store/features/home/presentaion/views/book-Detils-viwe.dart';
 import 'package:book_store/features/home/presentaion/views/home.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/book-Detiles-body.dart';
@@ -19,18 +20,14 @@ class BookApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      routes: {
-        BookDetilesViwe.id: (context) => const BookDetilesViwe(),
-        SearchView.id: (context) => const SearchView(),
-      },
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kMainColor,
           // =============== remmber this
           textTheme: GoogleFonts.montserratAlternatesTextTheme(
               ThemeData.dark().textTheme)),
-      home: const SplashViwe(),
     );
   }
 }

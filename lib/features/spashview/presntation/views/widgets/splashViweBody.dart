@@ -4,6 +4,7 @@ import 'package:book_store/features/home/presentaion/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViweBody extends StatefulWidget {
   const SplashViweBody({super.key});
@@ -27,10 +28,14 @@ class _SplashViweBodyState extends State<SplashViweBody>
 
 // =====================
   void addNavigatorAnimation() {
-    Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const Home(),
-          transition: Transition.leftToRightWithFade, duration: kDuration);
-    });
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        // Get.to(() => const Home(),
+        //     transition: Transition.leftToRightWithFade, duration: kDuration);
+        GoRouter.of(context).push('/homeView');
+      },
+    );
   }
 
   void intSlideAnimations() {

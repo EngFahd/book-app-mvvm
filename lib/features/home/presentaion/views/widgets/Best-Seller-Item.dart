@@ -5,6 +5,7 @@ import 'package:book_store/features/home/presentaion/views/book-Detils-viwe.dart
 import 'package:book_store/features/home/presentaion/views/widgets/CustemRateListViweItem.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerItems extends StatelessWidget {
   const BestSellerItems({super.key});
@@ -13,7 +14,7 @@ class BestSellerItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, BookDetilesViwe.id);
+        GoRouter.of(context).push('/bookDetilesView');
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
