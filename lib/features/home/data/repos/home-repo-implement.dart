@@ -24,7 +24,7 @@ class HomeRepoImplement implements HomeRepo {
       if (e is DioException) {
         return Left(ServerFailler.fromDioError(e));
       }
-    return left(ServerFailler(e.toString()));
+    return Left(ServerFailler(e.toString()));
     }
   }
 

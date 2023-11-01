@@ -2,13 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 abstract class Failler {
-  final String message;
+  final String errorMessage;
 
-  Failler(this.message);
+  Failler(this.errorMessage);
 }
 
 class ServerFailler extends Failler {
-  ServerFailler(super.message);
+  ServerFailler(super.errorMessage);
   factory ServerFailler.fromDioError(DioException dioError) {
     switch (dioError.type) {
       case DioExceptionType.connectionTimeout:
@@ -23,9 +23,9 @@ class ServerFailler extends Failler {
         return ServerFailler.fromResponse(
             dioError.response!.statusCode!, dioError.response!.data);
       case DioExceptionType.cancel:
-        return ServerFailler('REquset to Api was canceled');
+        return ServerFailler('Requset to Api was canceled');
       case DioExceptionType.connectionError:
-      // TODO: Handle this case.
+        return ServerFailler('Requset failed to Network');
       case DioExceptionType.unknown:
         if (dioError.message!.contains('SocketException')) {
           return ServerFailler('No connection');
@@ -33,7 +33,8 @@ class ServerFailler extends Failler {
           return ServerFailler('Unknown error ,Plase try again later');
         }
       default:
-      return ServerFailler('Opps thare was anerror, try again');    }
+        return ServerFailler('Opps thare was anerror, try again');
+    }
   }
   factory ServerFailler.fromResponse(int StatesCode, dynamic response) {
     if (StatesCode == 400 || StatesCode == 401 || StatesCode == 403) {
