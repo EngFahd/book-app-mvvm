@@ -1,4 +1,5 @@
 import 'package:book_store/core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustemListViweItem extends StatelessWidget {
@@ -30,16 +31,15 @@ class CustemBookImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.6 / 4,
-      child: Container(
-        // width: 100,
-        // height: MediaQuery.of(context).size.height * 0.3,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18),
-          color: Colors.red,
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: NetworkImage(imgUrl),
-          ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: CachedNetworkImage(
+          imageUrl: imgUrl,
+          fit: BoxFit.fill,
+          // placeholder: (context, url) => const Center(
+          //   child: CircularProgressIndicator(),
+          // ),
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );
