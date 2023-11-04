@@ -19,7 +19,7 @@ class HomeViweBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustemAppBar(),
-              CustemListViwe(),
+              CustemFeatureListViwe(),
               SizedBox(height: 50),
               TextBestSeller(),
             ],

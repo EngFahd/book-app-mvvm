@@ -1,50 +1,59 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
-abstract class Failler {
-  final String errorMessage;
+abstract class Failure {
+  final String errMessage;
 
-  Failler(this.errorMessage);
+  const Failure(this.errMessage);
 }
 
-class ServerFailler extends Failler {
-  ServerFailler(super.errorMessage);
-  factory ServerFailler.fromDioError(DioException dioError) {
+class ServerFailure extends Failure {
+  ServerFailure(super.errMessage);
+
+  factory ServerFailure.fromDioError(DioError dioError) {
     switch (dioError.type) {
       case DioExceptionType.connectionTimeout:
-        return ServerFailler('Conntions timed out ApiServer');
+        return ServerFailure("Connection timeout with ApiServer");
+
       case DioExceptionType.sendTimeout:
-        return ServerFailler('Send timed out ApiServer');
+        return ServerFailure("Send Timeout with ApiServer");
+
       case DioExceptionType.receiveTimeout:
-        return ServerFailler('Recive timed out ApiServer');
+        return ServerFailure("Receive Timeout with ApiServer");
+
       case DioExceptionType.badCertificate:
-        return ServerFailler('Conntions timed out ApiServer');
+        return ServerFailure("Bad Certificate with ApiServer");
+
       case DioExceptionType.badResponse:
-        return ServerFailler.fromResponse(
-            dioError.response!.statusCode!, dioError.response!.data);
+        return ServerFailure.fromResponse(
+            dioError.response!.statusCode, dioError.response!.data);
+
       case DioExceptionType.cancel:
-        return ServerFailler('Requset to Api was canceled');
+        return ServerFailure("Request to ApiServer was cancelled");
+
       case DioExceptionType.connectionError:
-        return ServerFailler('Requset failed to Network');
+        return ServerFailure("check your internet!");
+
       case DioExceptionType.unknown:
         if (dioError.message!.contains('SocketException')) {
-          return ServerFailler('No connection');
+          return ServerFailure("No Internet Connection,check your internet!");
         } else {
-          return ServerFailler('Unknown error ,Plase try again later');
+          return ServerFailure("Unexpected Error ,please try again!");
         }
+
       default:
-        return ServerFailler('Opps thare was anerror, try again');
+        return ServerFailure("Opps There was an Error,please try again!");
     }
   }
-  factory ServerFailler.fromResponse(int StatesCode, dynamic response) {
-    if (StatesCode == 400 || StatesCode == 401 || StatesCode == 403) {
-      return ServerFailler(response['error']['message']);
-    } else if (StatesCode == 404) {
-      return ServerFailler('yout request not found');
-    } else if (StatesCode == 500) {
-      return ServerFailler("Internal Server Error , try later");
+
+  factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
+    if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
+      return ServerFailure(response['error']['message']);
+    } else if (statusCode == 404) {
+      return ServerFailure('Your request not found, Please try later!');
+    } else if (statusCode == 500) {
+      return ServerFailure('Internal Server error, Please try later');
     } else {
-      return ServerFailler('Opps thare was anerror, try again');
+      return ServerFailure('Opps There was an Error, Please try again');
     }
   }
 }

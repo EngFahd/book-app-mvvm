@@ -32,7 +32,7 @@ class _SplashViweBodyState extends State<SplashViweBody>
       const Duration(seconds: 2),
       () {
         // Get.to(() => const Home(),
-        //     transition: Transition.leftToRightWithFade, duration: kDuration);
+        //     transition: Transition.fade, duration: kDuration);
         GoRouter.of(context).push('/homeView');
       },
     );

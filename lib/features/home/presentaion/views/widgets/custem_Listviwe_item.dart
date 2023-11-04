@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 class CustemListViweItem extends StatelessWidget {
   const CustemListViweItem({
     super.key,
+    required this.imgUrl,
   });
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class CustemListViweItem extends StatelessWidget {
       padding: const EdgeInsets.only(left: 10),
       child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.3,
-        child: const CustemBookImage(),
+        child: CustemBookImage(imgUrl: imgUrl),
       ),
     );
   }
@@ -21,8 +23,9 @@ class CustemListViweItem extends StatelessWidget {
 class CustemBookImage extends StatelessWidget {
   const CustemBookImage({
     super.key,
+    required this.imgUrl,
   });
-
+  final String imgUrl;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -31,10 +34,13 @@ class CustemBookImage extends StatelessWidget {
         // width: 100,
         // height: MediaQuery.of(context).size.height * 0.3,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            color: Colors.red,
-            image: const DecorationImage(
-                fit: BoxFit.fill, image: AssetImage(AssetsData.kTestim))),
+          borderRadius: BorderRadius.circular(18),
+          color: Colors.red,
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: NetworkImage(imgUrl),
+          ),
+        ),
       ),
     );
   }

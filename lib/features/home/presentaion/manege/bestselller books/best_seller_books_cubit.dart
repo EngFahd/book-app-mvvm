@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:book_store/features/home/data/models/book_model/book_model.dart';
+import 'package:book_store/features/home/data/models/BookModel.dart';
 import 'package:book_store/features/home/data/repos/home-repo.dart';
 import 'package:equatable/equatable.dart';
 
@@ -13,7 +13,7 @@ class BestSellerBooksCubit extends Cubit<BestSellerBooksState> {
     emit(BestSellerBooksLoading());
     var result = await homeRepo.featchBestSellerBooks();
     result.fold((failuer) {
-      emit(BestSellerBooksFailuer(failuer.errorMessage));
+      emit(BestSellerBooksFailuer(failuer.errMessage));
     }, (books) {
       emit(BestSellerBooksSuccess(books));
     });
