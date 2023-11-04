@@ -1,15 +1,17 @@
 import 'package:book_store/constanceApp.dart';
 import 'package:book_store/core/utils/Styles.dart';
 import 'package:book_store/core/utils/assets.dart';
+import 'package:book_store/features/home/data/models/BookModel.dart';
 import 'package:book_store/features/home/presentaion/views/book-Detils-viwe.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/CustemRateListViweItem.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerItems extends StatelessWidget {
-  const BestSellerItems({super.key});
-
+  const BestSellerItems({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,16 +25,10 @@ class BestSellerItems extends StatelessWidget {
             SizedBox(
               height: 125,
               child: AspectRatio(
-                aspectRatio: 2.5 / 4,
-                child: Container(
-                  // width: 100,
-                  // height: MediaQuery.of(context).size.height * 0.3,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage(AssetsData.kTestim))),
+                aspectRatio: 2.7 / 4,
+                child: CachedNetworkImage(
+                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? '',
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -44,7 +40,7 @@ class BestSellerItems extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      "Harry Potter and the Glopal of fire ",
+                      bookModel.volumeInfo.title ?? "",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Style.textStyle20.copyWith(
@@ -53,8 +49,8 @@ class BestSellerItems extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 2),
-                  const Text(
-                    "J.K Rowling",
+                  Text(
+                    bookModel.volumeInfo.authors![0],
                     style: Style.textStyle14,
                   ),
                   const SizedBox(
@@ -63,12 +59,16 @@ class BestSellerItems extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        r"19.99 $",
-                        style: Style.textStyle20
-                            .copyWith(fontWeight: FontWeight.bold),
+                        "Free",
+                        style: Style.textStyle14.copyWith(
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic),
                       ),
                       const Spacer(),
-                      const CustemRateListViweItem()
+                       CustemRateListViweItem(
+                       rate: bookModel.volumeInfo.averageRating ?? 0  ,
+                       count:bookModel.volumeInfo.ratingsCount ?? 0
+                      ),
                     ],
                   )
                 ],

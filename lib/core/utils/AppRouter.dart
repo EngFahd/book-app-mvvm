@@ -14,10 +14,10 @@ abstract class AppRouter{
       path: '/homeView',
       builder: (context, state) =>const Home(),
     ),
-    GoRoute(
-      path: '/bookDetilesView',
-      builder: (context, state) =>const BookDetilesViwe(),
-    ),
+    // GoRoute(
+    //   path: '/bookDetilesView',
+    //   builder: (context, state) =>const BookDetilesViwe(),
+    // ),
     GoRoute(
       path: '/bookSearchView',
       builder: (context, state) =>const SearchView(),

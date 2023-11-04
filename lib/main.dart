@@ -29,7 +29,7 @@ class BookApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-              BestSellerBooksCubit(gitIt.get<HomeRepoImpl>()),
+              BestSellerBooksCubit(gitIt.get<HomeRepoImpl>())..featchBestSellerBooks(),
         ),
       ],
       child: MaterialApp.router(
