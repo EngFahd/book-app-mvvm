@@ -14,13 +14,14 @@ class BookDetilesViwe extends StatefulWidget {
 class _BookDetilesViweState extends State<BookDetilesViwe> {
   @override
   void initState() {
-    BlocProvider.of<BookDetailesCubit>(context).featchBestSellerBooks(category: widget.bookModel.volumeInfo.categories![0]);
+    BlocProvider.of<BookDetailesCubit>(context).featchBestSellerBooks(
+        category: widget.bookModel.volumeInfo.categories![0]);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: BookDetiledBody(bookModel: widget.bookModel),
       ),

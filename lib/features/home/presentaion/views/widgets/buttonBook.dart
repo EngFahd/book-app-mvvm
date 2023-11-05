@@ -10,7 +10,7 @@ class ButtonBook extends StatelessWidget {
       children: [
         Expanded(
           child: CustemButton(
-            text: r'19.99$',
+            text: r'Free',
             backgroundColor: Colors.white,
             colorText: Colors.black,
             borderRadius: BorderRadius.only(
