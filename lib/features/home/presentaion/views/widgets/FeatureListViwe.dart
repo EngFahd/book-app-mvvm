@@ -4,9 +4,12 @@ import 'package:book_store/features/home/presentaion/manege/Featured%20box%20Cub
 import 'package:book_store/features/home/presentaion/views/widgets/custem_Listviwe_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class CustemFeatureListViwe extends StatelessWidget {
   const CustemFeatureListViwe({super.key});
+
+  get bookModel => null;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +20,18 @@ class CustemFeatureListViwe extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.3,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return  CustemListViweItem(imgUrl: state.books[index].volumeInfo.imageLinks!.smallThumbnail?? '');
+                return GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context)
+                          .push('/bookDetilesView', extra: state.books[index]);
+                    },
+                    child: CustemListViweItem(
+                        imgUrl: state.books[index].volumeInfo.imageLinks!
+                                .smallThumbnail ??
+                            ''));
               },
             ),
           );

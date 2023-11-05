@@ -16,7 +16,7 @@ class BestSellerItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push('/bookDetilesView',extra: bookModel);
+        GoRouter.of(context).push('/bookDetilesView', extra: bookModel);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -65,10 +65,9 @@ class BestSellerItems extends StatelessWidget {
                             fontStyle: FontStyle.italic),
                       ),
                       const Spacer(),
-                       CustemRateListViweItem(
-                       rate: bookModel.volumeInfo.averageRating ?? 0  ,
-                       count:bookModel.volumeInfo.ratingsCount ?? 0
-                      ),
+                      CustemRateListViweItem(
+                          rate: bookModel.volumeInfo.averageRating ?? 0,
+                          count: bookModel.volumeInfo.ratingsCount ?? 0),
                     ],
                   )
                 ],
