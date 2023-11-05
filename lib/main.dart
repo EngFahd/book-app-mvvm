@@ -2,9 +2,9 @@
 import 'package:book_store/constanceApp.dart';
 import 'package:book_store/core/utils/AppRouter.dart';
 import 'package:book_store/core/utils/services-locator.dart';
+import 'package:book_store/features/home/data/manege/Featured%20box%20Cubite/feature_books_cubit.dart';
+import 'package:book_store/features/home/data/manege/bestselller%20books/best_seller_books_cubit.dart';
 import 'package:book_store/features/home/data/repos/home-repo-implement.dart';
-import 'package:book_store/features/home/presentaion/manege/Featured%20box%20Cubite/feature_books_cubit.dart';
-import 'package:book_store/features/home/presentaion/manege/bestselller%20books/best_seller_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';

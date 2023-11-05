@@ -1,7 +1,7 @@
 import 'package:book_store/core/widgets/errorWidget.dart';
 import 'package:book_store/core/widgets/loading.dart';
+import 'package:book_store/features/home/data/manege/bookdetails%20cubite/book_detailes_cubit.dart';
 import 'package:book_store/features/home/data/models/BookModel.dart';
-import 'package:book_store/features/home/presentaion/manege/bookdetails%20cubite/book_detailes_cubit.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/custem_Listviwe_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

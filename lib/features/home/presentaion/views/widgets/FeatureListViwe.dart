@@ -1,6 +1,6 @@
 import 'package:book_store/core/widgets/errorWidget.dart';
 import 'package:book_store/core/widgets/loading.dart';
-import 'package:book_store/features/home/presentaion/manege/Featured%20box%20Cubite/feature_books_cubit.dart';
+import 'package:book_store/features/home/data/manege/Featured%20box%20Cubite/feature_books_cubit.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/custem_Listviwe_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

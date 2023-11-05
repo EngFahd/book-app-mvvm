@@ -1,6 +1,6 @@
 import 'package:book_store/core/widgets/errorWidget.dart';
 import 'package:book_store/core/widgets/loading.dart';
-import 'package:book_store/features/home/presentaion/manege/bestselller%20books/best_seller_books_cubit.dart';
+import 'package:book_store/features/home/data/manege/bestselller%20books/best_seller_books_cubit.dart';
 import 'package:book_store/features/home/presentaion/views/widgets/Best-Seller-Item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
