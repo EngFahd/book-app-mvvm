@@ -52,7 +52,7 @@ class BookDetiledBody extends StatelessWidget {
                   rate: bookModel.volumeInfo.ratingsCount ?? 0,
                 ),
                 const SizedBox(height: 25),
-                const ButtonBook(),
+                 ButtonBook(bookModel: bookModel),
                 const Expanded(child: SizedBox(height: 25)),
                 Align(
                   alignment: Alignment.centerLeft,

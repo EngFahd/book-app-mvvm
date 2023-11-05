@@ -8,7 +8,7 @@ class CustemButton extends StatelessWidget {
     this.borderRadius,
     required this.backgroundColor,
     required this.text,
-    this.fontSize,
+    this.fontSize, this.onTap,
   });
 
   final Color colorText;
@@ -16,6 +16,7 @@ class CustemButton extends StatelessWidget {
   final Color backgroundColor;
   final BorderRadius? borderRadius;
   final String text;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,7 +28,7 @@ class CustemButton extends StatelessWidget {
             borderRadius: borderRadius ?? BorderRadius.circular(16),
           ),
         ),
-        onPressed: () {},
+        onPressed:onTap,
         child: Text(
           text,
           style: Style.textStyle18.copyWith(

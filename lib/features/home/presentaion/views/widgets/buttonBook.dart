@@ -1,14 +1,17 @@
+import 'package:book_store/core/utils/functions/UrlLancher.dart';
 import 'package:book_store/core/widgets/CustemButton.dart';
+import 'package:book_store/features/home/data/models/BookModel.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ButtonBook extends StatelessWidget {
-  const ButtonBook({super.key});
-
+  const ButtonBook({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Expanded(
+        const Expanded(
           child: CustemButton(
             text: r'Free',
             backgroundColor: Colors.white,
@@ -21,11 +24,14 @@ class ButtonBook extends StatelessWidget {
         ),
         Expanded(
           child: CustemButton(
-            text: 'Free preview',
+            onTap: () async {
+              UrlCustemLancher(context,bookModel.volumeInfo.previewLink!);
+            },
+            text: getText(bookModel),
             fontSize: 16,
-            backgroundColor: Color(0xffEf8262),
+            backgroundColor: const Color(0xffEf8262),
             colorText: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topRight: Radius.circular(16),
               bottomRight: Radius.circular(16),
             ),
@@ -33,5 +39,12 @@ class ButtonBook extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  getText(BookModel bookModel) {
+    if (bookModel.volumeInfo.previewLink == null) {
+      return 'Not Avaliable';
+    }
+    return 'Preview ';
   }
 }
