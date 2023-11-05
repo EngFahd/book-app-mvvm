@@ -40,7 +40,7 @@ class BestSellerItems extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      bookModel.volumeInfo.title ?? "",
+                      bookModel.volumeInfo.title![0] == [] ? ' ' : 'unknown',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Style.textStyle20.copyWith(
@@ -50,7 +50,7 @@ class BestSellerItems extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors![0] ?? "",
                     style: Style.textStyle14,
                   ),
                   const SizedBox(
@@ -77,5 +77,11 @@ class BestSellerItems extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  auther() {
+    if (bookModel.volumeInfo.authors![0] == "") {
+      return "no authors";
+    }
   }
 }

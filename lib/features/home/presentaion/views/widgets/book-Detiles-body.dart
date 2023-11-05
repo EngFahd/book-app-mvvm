@@ -26,11 +26,11 @@ class BookDetiledBody extends StatelessWidget {
               children: [
                 const CustemBookDetielsAppBar(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: wideth * 0.25),
+                  padding: EdgeInsets.symmetric(horizontal: wideth * 0.15),
                   child: CustemBookImage(
                       imgUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                 Text(
                   bookModel.volumeInfo.title ?? '',
                   textAlign: TextAlign.center,
@@ -46,14 +46,15 @@ class BookDetiledBody extends StatelessWidget {
                           fontStyle: FontStyle.italic,
                           fontWeight: FontWeight.w500)),
                 ),
-                const SizedBox(height: 14),
+                const SizedBox(height: 20),
                 CustemRateListViweItem(
                   count: bookModel.volumeInfo.averageRating ?? 0,
                   rate: bookModel.volumeInfo.ratingsCount ?? 0,
                 ),
-                const SizedBox(height: 25),
-                 ButtonBook(bookModel: bookModel),
-                const Expanded(child: SizedBox(height: 25)),
+                const SizedBox(height: 35),
+                ButtonBook(bookModel: bookModel),
+                const Expanded(child: SizedBox(height: 20)),
+                // const Spacer(),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(

@@ -30,7 +30,7 @@ class VolumeInfo {
 
   VolumeInfo.fromJson(dynamic json) {
     title = json['title'];
-    authors = json['authors'] != null ? json['authors'].cast<String>() : [];
+    authors = json['authors'] != null ? json['authors'].cast<dynamic>() : [];
     publisher = json['publisher'];
     publishedDate = json['publishedDate'];
     description = json['description'];
@@ -64,7 +64,7 @@ class VolumeInfo {
     canonicalVolumeLink = json['canonicalVolumeLink'];
   }
   String? title;
-  List<String>? authors;
+  List<dynamic>? authors;
   String? publisher;
   String? publishedDate;
   String? description;

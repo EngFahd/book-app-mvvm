@@ -18,7 +18,9 @@ class ListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context).push('/bookDetilesView');
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Row(
@@ -52,7 +54,7 @@ class ListViewItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors![0] ?? 'unknown',
                     style: Style.textStyle14,
                   ),
                   const SizedBox(
