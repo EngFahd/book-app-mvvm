@@ -1,17 +1,23 @@
 import 'package:book_store/core/errors/failler.dart';
 import 'package:book_store/features/home/domain/entities/home-entities.dart';
+import 'package:book_store/features/home/domain/repo/home-repo.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../../../core/use_case/no_paramter_use_case.dart';
+
 // https://www.udemy.com/course/deep-dive-into-clean-architecture-in-flutter-2022arabic/learn/lecture/37322230#questions
-class FeatchFeatureBooksUseCase extends UseCase<BookEntity>{
+class FeatchFeatureBooksUseCase extends UseCase<List<BookEntity>> {
   @override
-  Future<Either<Failure, BookEntity>> call() {
+  final HomeRepo homeRepo;
+  FeatchFeatureBooksUseCase(this.homeRepo);
+  
+  @override
+  Future<Either<Failure, List<BookEntity>>> call() async{
     // TODO: implement call
-    throw UnimplementedError();
+    return await homeRepo.featchFeatureBooks();
   }
+
   }
 
 
-abstract class UseCase<Type> {
-  Future<Either<Failure,Type>> call();
-}
+
