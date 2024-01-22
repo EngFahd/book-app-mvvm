@@ -11,4 +11,15 @@ clean Arch
 ===================
 5- Design UseCase in paper , at the most every function in repo neded UseCase
 
-6- reate folder usecases
+6- reate folder usecases {
+class FeatchFeatureBooksUseCase {
+  final HomeRepo homeRepo;
+
+  FeatchFeatureBooksUseCase(this.homeRepo);
+
+  Future<Either<Failure, List<BookEntity>>> featchFeatureBooks() {
+    //  ممكن اكتب كود بس انا مش محتاج علشان مش محتاج
+    return homeRepo.featchFeatureBooks();
+  }
+}
+}
