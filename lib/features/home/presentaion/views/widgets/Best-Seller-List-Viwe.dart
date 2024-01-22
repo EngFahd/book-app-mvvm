@@ -17,10 +17,12 @@ class BestSellerListViwe extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
-            itemCount: state.books.length,
+            itemCount: 2,
             itemBuilder: (context, index) {
               return BestSellerItems(
-                  bookModel: state.books[index] );
+                  bookModel: state.books[index] 
+                  
+                  );
                 
             },
           );

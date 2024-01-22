@@ -1,0 +1,14 @@
+clean Arch 
+
+1- Domain Layer > bussnis logic
+ 2- book intites => book model presntaion
+ 3- repos => abstract class respons > futures book intites 
+        > and create methode without implement
+=======================
+4 - install dartZ => accept tow return > L and R
+            > l is Falur class whitch i create in core folder
+            > R is lidt of bok intites
+===================
+5- Design UseCase in paper , at the most every function in repo neded UseCase
+
+6- reate folder usecases

@@ -27,7 +27,7 @@ class BestSellerItems extends StatelessWidget {
               child: AspectRatio(
                 aspectRatio: 2.7 / 4,
                 child: CachedNetworkImage(
-                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? '',
+                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail ?? 'assets/images/test_image.png',
                   fit: BoxFit.fill,
                 ),
               ),
@@ -50,7 +50,7 @@ class BestSellerItems extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    bookModel.volumeInfo.authors![0] ?? "",
+                    bookModel.volumeInfo.authors![0] ?? "Fahd" ,
                     style: Style.textStyle14,
                   ),
                   const SizedBox(

@@ -7,9 +7,8 @@ import 'package:book_store/features/home/presentaion/views/home.dart';
 import 'package:book_store/features/search-viwe/data/mange/Searchcubit/search_items_cubit.dart';
 import 'package:book_store/features/search-viwe/data/repos/Search-repo-implement.dart';
 import 'package:book_store/features/search-viwe/presentaion/views/Search-view.dart';
-import 'package:book_store/features/spashview/presntation/views/splashviwe.dart';
+import 'package:book_store/features/spash-view/presntation/views/splashviwe.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {

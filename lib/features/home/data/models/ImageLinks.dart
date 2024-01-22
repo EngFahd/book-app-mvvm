@@ -14,7 +14,7 @@ class ImageLinks {
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['smallThumbnail'] = smallThumbnail;
-    map['thumbnail'] = thumbnail;
+    map['thumbnail'] = thumbnail ;
     return map;
   }
 }

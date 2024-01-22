@@ -1,4 +1,4 @@
-import 'package:book_store/features/spashview/presntation/views/widgets/splashViweBody.dart';
+import 'package:book_store/features/spash-view/presntation/views/widgets/splashViweBody.dart';
 import 'package:flutter/material.dart';
 
 class SplashViwe extends StatelessWidget {
